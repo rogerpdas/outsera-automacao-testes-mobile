@@ -14,7 +14,7 @@ public class NavigationSteps {
     @Dado("o usuário está autenticado com e-mail {string} e senha {string}")
     public void autenticarUsuario(String email, String password) {
         var loginPage = new LoginPage();
-        productsPage  = loginPage.doLogin(email, password);
+        productsPage = loginPage.doLogin(email, password);
         Assertions.assertTrue(productsPage.isOnProductsPage(),
                 "Login falhou — tela de Produtos não exibida");
     }
@@ -40,8 +40,8 @@ public class NavigationSteps {
     public void validarBotaoVisivel(String buttonText) {
         var visible = switch (buttonText) {
             case "ADD TO CART" -> productDetailPage.isAddToCartVisible();
-            case "REMOVE"      -> productDetailPage.isRemoveVisible();
-            default            -> throw new IllegalArgumentException(
+            case "REMOVE" -> productDetailPage.isRemoveVisible();
+            default -> throw new IllegalArgumentException(
                     "Botão não mapeado: '%s'".formatted(buttonText));
         };
         Assertions.assertTrue(visible, "Botão '%s' não está visível".formatted(buttonText));
@@ -86,14 +86,14 @@ public class NavigationSteps {
     public void tocarEmBotao(String buttonText) {
         switch (buttonText) {
             case "BACK TO PRODUCTS" -> productsPage = productDetailPage.tapBackToProducts();
-            default                 -> throw new IllegalArgumentException(
+            default -> throw new IllegalArgumentException(
                     "Botão de navegação não mapeado: '%s'".formatted(buttonText));
         }
     }
-}
 
     @Entao("o usuário deve estar na tela de Produtos")
     public void validarNaTelaDeProdutos() {
         Assertions.assertTrue(productsPage.isOnProductsPage(),
                 "Usuário não voltou para a tela de Produtos");
     }
+}
