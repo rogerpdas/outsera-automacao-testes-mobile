@@ -26,7 +26,9 @@ public class CheckoutSteps {
 
     @Dado("o usuário está na tela do carrinho")
     public void usuarioNaTelaDoCarrinho() {
-        cartPage = productDetailPage.tapBackToProducts().tapCartIcon();
+        productsPage = productDetailPage.tapBackToProducts();
+        Assertions.assertTrue(productsPage.isOnProductsPage(), "Não voltou para a tela de produtos a tempo");
+        cartPage = productsPage.tapCartIcon();
         Assertions.assertTrue(cartPage.isOnCartPage(), "Tela do carrinho não está visível");
     }
 
