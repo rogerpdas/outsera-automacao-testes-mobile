@@ -44,10 +44,4 @@ public class ProductDetailPage extends BasePage {
         tap(backButton);
         return new ProductsPage();
     }
-
-    public boolean isOnProductDetailPage() { return isVisible(backButton); }
-    public boolean isAddToCartVisible()  { return isVisibleWithScroll(addToCartButton); }
-    public boolean isRemoveVisible()     { return isVisible(removeButton); }
-    public String  getPrice()           { return readText(price); }
-    public String  getDescription()     { return readText(description); }
 }

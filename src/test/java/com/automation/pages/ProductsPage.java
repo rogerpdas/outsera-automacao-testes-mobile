@@ -24,8 +24,8 @@ public class ProductsPage extends BasePage {
     @iOSXCUITFindBy(accessibility = "LOGOUT")
     private WebElement logoutButton;
 
-    @AndroidFindBy(accessibility = "test-Cart drop zone")
-    @iOSXCUITFindBy(accessibility = "test-Cart drop zone")
+    @AndroidFindBy(accessibility = "test-Cart")
+    @iOSXCUITFindBy(accessibility = "test-Cart")
     private WebElement cartIcon;
 
     @AndroidFindBy(accessibility = "test-Item")
@@ -36,7 +36,8 @@ public class ProductsPage extends BasePage {
 
     public ProductDetailPage tapFirstProduct() {
         log.info("Tocando no primeiro produto");
-        if (productItems.isEmpty()) throw new IllegalStateException("Nenhum produto listado na tela");
+        if (productItems.isEmpty())
+            throw new IllegalStateException("Nenhum produto listado na tela");
         tap(productItems.get(0));
         return new ProductDetailPage();
     }
@@ -69,7 +70,15 @@ public class ProductsPage extends BasePage {
 
     // ── Validações ────────────────────────────────────────────────
 
-    public boolean isOnProductsPage() { return isVisible(productsTitle); }
-    public String  getPageTitle()     { return readText(productsTitle); }
-    public int     getProductCount()  { return productItems.size(); }
+    public boolean isOnProductsPage() {
+        return isVisible(productsTitle);
+    }
+
+    public String getPageTitle() {
+        return readText(productsTitle);
+    }
+
+    public int getProductCount() {
+        return productItems.size();
+    }
 }

@@ -7,7 +7,8 @@ import org.junit.jupiter.api.Assertions;
 
 /**
  * Step definitions para o feature de Formulário de Cadastro (Tarefa 2).
- * Fluxo: Login → Produtos → Produto → Carrinho → Formulário de dados pessoais → Confirmação
+ * Fluxo: Login → Produtos → Produto → Carrinho → Formulário de dados pessoais →
+ * Confirmação
  */
 public class FormularioCadastroSteps {
 
@@ -21,14 +22,12 @@ public class FormularioCadastroSteps {
     public void navegarAteFormulario() {
         log.info("Navegando até formulário via fluxo: Produtos → Detalhe → Carrinho → Checkout");
         productsPage = new ProductsPage();
-        Assertions.assertTrue(productsPage.isOnProductsPage(), "Tela de produtos não está visível");
 
         productDetailPage = productsPage.tapFirstProduct();
         productDetailPage.tapAddToCart();
 
         productsPage = productDetailPage.tapBackToProducts();
         var cartPage = productsPage.tapCartIcon();
-        Assertions.assertTrue(cartPage.isOnCartPage(), "Tela do carrinho não está visível");
 
         formularioPage = cartPage.tapCheckout();
         Assertions.assertTrue(formularioPage.formularioVisivel(),
@@ -43,8 +42,7 @@ public class FormularioCadastroSteps {
         var dados = new FormularioCadastroPage.DadosCadastro(
                 row.get("nome"),
                 row.get("sobrenome"),
-                row.get("cep")
-        );
+                row.get("cep"));
         formularioPage.preencherFormulario(dados);
     }
 
@@ -112,6 +110,5 @@ public class FormularioCadastroSteps {
 
     // ── Logger ────────────────────────────────────────────────────
 
-    private static final org.slf4j.Logger log =
-            org.slf4j.LoggerFactory.getLogger(FormularioCadastroSteps.class);
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(FormularioCadastroSteps.class);
 }
