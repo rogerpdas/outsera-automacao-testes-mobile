@@ -1,4 +1,4 @@
-2026-03-04 22:56:44.453 [main] INFO  com.automation.config.ConfigLoader — ╔══════════════════════════════════════════╗
+2026-03-04 23:22:45.146 [main] INFO  com.automation.config.ConfigLoader — ╔══════════════════════════════════════════╗
 ║         Configuração carregada           ║
 ╠══════════════════════════════════════════╣
 ║  Platform   : Android
@@ -6,178 +6,106 @@
 ║  Appium URL : http://127.0.0.1:4723
 ╚══════════════════════════════════════════╝
 
-2026-03-04 22:56:44.459 [main] INFO  c.automation.utils.ScreenshotUtils — Diretório de screenshots: /home/runner/work/outsera-automacao-testes-mobile/outsera-automacao-testes-mobile/reports/screenshots
-2026-03-04 22:56:44.460 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
+2026-03-04 23:22:45.151 [main] INFO  c.automation.utils.ScreenshotUtils — Diretório de screenshots: /home/runner/work/outsera-automacao-testes-mobile/outsera-automacao-testes-mobile/reports/screenshots
+2026-03-04 23:22:45.151 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
 ║       📱 Mobile Automation — Suite Iniciada          ║
 ╚══════════════════════════════════════════════════════╝
 
-2026-03-04 22:56:44.821 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-04 23:22:45.475 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Preenchimento completo com dados válidos e envio do pedido
 │   Tags: [@formulario, @regression, @smoke]
 └──────────────────────────────────────────────────────
 
-2026-03-04 22:56:44.824 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-04 22:57:02.069 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 35f4dff7-0270-4150-9f9f-590d276181a0
-2026-03-04 22:57:02.937 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-04 22:57:02.937 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-04 22:57:05.178 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-04 22:57:05.179 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-04 22:57:07.599 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-04 22:57:07.599 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-04 22:57:10.551 [main] INFO  c.a.steps.FormularioCadastroSteps — Navegando até formulário via fluxo: Produtos → Detalhe → Carrinho → Checkout
-2026-03-04 22:57:11.265 [main] INFO  com.automation.pages.ProductsPage — Tocando no primeiro produto
-2026-03-04 22:57:11.527 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 22:57:11.927 [main] INFO  c.automation.pages.ProductDetailPage — Adicionando ao carrinho
-2026-03-04 22:57:21.980 [main] DEBUG c.automation.pages.ProductDetailPage — Realizando scroll para baixo
-2026-03-04 22:57:24.504 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
-2026-03-04 22:57:24.769 [main] INFO  c.automation.pages.ProductDetailPage — Voltando para produtos
-2026-03-04 22:57:24.769 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
-2026-03-04 22:57:25.886 [main] INFO  com.automation.pages.ProductsPage — Abrindo carrinho
-2026-03-04 22:57:25.886 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 22:57:47.882 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Preenchimento completo com dados válidos e envio do pedido — Status: FAILED
-2026-03-04 22:57:47.882 [main] WARN  com.automation.hooks.Hooks — ⚠ Cenário FALHOU — capturando screenshot como evidência
-2026-03-04 22:57:49.077 [main] INFO  c.automation.utils.ScreenshotUtils — Screenshot salvo: /home/runner/work/outsera-automacao-testes-mobile/outsera-automacao-testes-mobile/reports/screenshots/Preenchimento_completo_com_dados_v_lidos_e_envio_do_pedido_20260304_225749.png
-2026-03-04 22:57:49.942 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-04 22:57:50.028 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-04 23:22:45.476 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-04 23:23:00.420 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 176df758-31bf-407d-8bb1-d74af5727d27
+2026-03-04 23:23:00.443 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Preenchimento completo com dados válidos e envio do pedido — Status: UNDEFINED
+2026-03-04 23:23:01.058 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-04 23:23:01.127 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Login com credenciais válidas
 │   Tags: [@login, @smoke, @regression]
 └──────────────────────────────────────────────────────
 
-2026-03-04 22:57:50.028 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-04 22:57:56.921 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 7885e9a9-4dd1-4777-b7f6-fc0293b99122
-2026-03-04 22:57:58.466 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-04 22:57:58.467 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-04 22:57:59.605 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-04 22:57:59.605 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-04 22:58:00.596 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-04 22:58:00.596 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-04 22:58:04.075 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Login com credenciais válidas — Status: PASSED
-2026-03-04 22:58:04.425 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-04 22:58:04.443 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-04 23:23:01.130 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-04 23:23:09.377 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 081bd76f-0464-4dd5-be33-7244bfa9a704
+2026-03-04 23:23:11.354 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-04 23:23:11.354 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-04 23:23:12.500 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-04 23:23:12.500 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-04 23:23:14.215 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-04 23:23:14.217 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-04 23:23:17.861 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Login com credenciais válidas — Status: PASSED
+2026-03-04 23:23:18.548 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-04 23:23:18.565 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Logout após login bem-sucedido
 │   Tags: [@login, @smoke, @regression]
 └──────────────────────────────────────────────────────
 
-2026-03-04 22:58:04.444 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-04 22:58:10.371 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: aec325a5-522b-442f-bded-b5652ade541e
-2026-03-04 22:58:11.493 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-04 22:58:11.493 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-04 22:58:12.593 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-04 22:58:12.593 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-04 22:58:14.170 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-04 22:58:14.170 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-04 22:58:16.337 [main] INFO  com.automation.pages.ProductsPage — Realizando logout
-2026-03-04 22:58:16.337 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 22:58:18.193 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 22:58:20.631 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Logout após login bem-sucedido — Status: PASSED
-2026-03-04 22:58:21.038 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-04 22:58:21.068 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
-│ ▶ Iniciando: Navegar para detalhe do produto e validar elementos
-│   Tags: [@navigation, @regression, @smoke]
-└──────────────────────────────────────────────────────
-
-2026-03-04 22:58:21.069 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-04 22:58:27.565 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 995f1acf-2a61-4bbf-9b30-3b61cfda1f32
-2026-03-04 22:58:27.642 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-04 22:58:27.643 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-04 22:58:29.790 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-04 22:58:29.790 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-04 22:58:31.357 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-04 22:58:31.357 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-04 22:58:33.642 [main] INFO  com.automation.pages.ProductsPage — Tocando no primeiro produto
-2026-03-04 22:58:34.089 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 22:58:45.505 [main] DEBUG c.automation.pages.ProductDetailPage — Realizando scroll para baixo
-2026-03-04 22:58:47.803 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Navegar para detalhe do produto e validar elementos — Status: PASSED
-2026-03-04 22:58:48.064 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-04 22:58:48.071 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
+2026-03-04 23:23:18.566 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-04 23:23:27.074 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: b45d1f2b-4fb9-427c-b8d0-68085f07680d
+2026-03-04 23:23:29.023 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-04 23:23:29.024 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-04 23:23:30.402 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-04 23:23:30.402 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-04 23:23:32.050 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-04 23:23:32.050 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-04 23:23:35.261 [main] INFO  com.automation.pages.ProductsPage — Realizando logout
+2026-03-04 23:23:35.262 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-04 23:23:35.537 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-04 23:23:39.400 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Logout após login bem-sucedido — Status: PASSED
+2026-03-04 23:23:39.988 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-04 23:23:39.994 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
 ║       ✅ Mobile Automation — Suite Finalizada        ║
 ║       Relatórios disponíveis em: reports/            ║
 ╚══════════════════════════════════════════════════════╝
 
-2026-03-04 22:58:48.653 [main] INFO  c.automation.utils.ScreenshotUtils — Diretório de screenshots: /home/runner/work/outsera-automacao-testes-mobile/outsera-automacao-testes-mobile/reports/screenshots
-2026-03-04 22:58:48.654 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
+2026-03-04 23:23:40.639 [main] INFO  c.automation.utils.ScreenshotUtils — Diretório de screenshots: /home/runner/work/outsera-automacao-testes-mobile/outsera-automacao-testes-mobile/reports/screenshots
+2026-03-04 23:23:40.639 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
 ║       📱 Mobile Automation — Suite Iniciada          ║
 ╚══════════════════════════════════════════════════════╝
 
-2026-03-04 22:58:48.666 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-04 23:23:40.668 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Preenchimento completo com dados válidos e envio do pedido
 │   Tags: [@formulario, @regression, @smoke]
 └──────────────────────────────────────────────────────
 
-2026-03-04 22:58:48.667 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-04 22:58:53.492 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: f6bd03f3-6ec4-4e08-b7b3-4b189319e71c
-2026-03-04 22:58:53.559 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-04 22:58:53.561 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-04 22:58:55.061 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-04 22:58:55.061 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-04 22:58:56.358 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-04 22:58:56.358 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-04 22:58:58.581 [main] INFO  c.a.steps.FormularioCadastroSteps — Navegando até formulário via fluxo: Produtos → Detalhe → Carrinho → Checkout
-2026-03-04 22:58:59.222 [main] INFO  com.automation.pages.ProductsPage — Tocando no primeiro produto
-2026-03-04 22:58:59.289 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 22:58:59.469 [main] INFO  c.automation.pages.ProductDetailPage — Adicionando ao carrinho
-2026-03-04 22:59:09.498 [main] DEBUG c.automation.pages.ProductDetailPage — Realizando scroll para baixo
-2026-03-04 22:59:11.676 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
-2026-03-04 22:59:11.826 [main] INFO  c.automation.pages.ProductDetailPage — Voltando para produtos
-2026-03-04 22:59:11.826 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
-2026-03-04 22:59:12.633 [main] INFO  com.automation.pages.ProductsPage — Abrindo carrinho
-2026-03-04 22:59:12.635 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 22:59:34.278 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Preenchimento completo com dados válidos e envio do pedido — Status: FAILED
-2026-03-04 22:59:34.278 [main] WARN  com.automation.hooks.Hooks — ⚠ Cenário FALHOU — capturando screenshot como evidência
-2026-03-04 22:59:34.980 [main] INFO  c.automation.utils.ScreenshotUtils — Screenshot salvo: /home/runner/work/outsera-automacao-testes-mobile/outsera-automacao-testes-mobile/reports/screenshots/Preenchimento_completo_com_dados_v_lidos_e_envio_do_pedido_20260304_225934.png
-2026-03-04 22:59:35.245 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-04 22:59:35.268 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-04 23:23:40.669 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-04 23:23:48.240 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 089a7495-baae-4cde-8e1e-dddb31801277
+2026-03-04 23:23:48.250 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Preenchimento completo com dados válidos e envio do pedido — Status: UNDEFINED
+2026-03-04 23:23:48.814 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-04 23:23:48.833 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Login com credenciais válidas
 │   Tags: [@login, @smoke, @regression]
 └──────────────────────────────────────────────────────
 
-2026-03-04 22:59:35.269 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-04 22:59:40.175 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 8335b0ec-8871-4c77-9a43-4428bd77414b
-2026-03-04 22:59:41.187 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-04 22:59:41.187 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-04 22:59:42.339 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-04 22:59:42.339 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-04 22:59:43.411 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-04 22:59:43.412 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-04 22:59:45.562 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Login com credenciais válidas — Status: PASSED
-2026-03-04 22:59:45.829 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-04 22:59:45.837 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-04 23:23:48.833 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-04 23:23:56.649 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 9c907469-9edd-4496-81e4-04a68bd86acf
+2026-03-04 23:23:57.981 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-04 23:23:57.982 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-04 23:23:59.073 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-04 23:23:59.074 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-04 23:24:00.657 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-04 23:24:00.658 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-04 23:24:04.233 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Login com credenciais válidas — Status: PASSED
+2026-03-04 23:24:04.787 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-04 23:24:04.799 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Logout após login bem-sucedido
 │   Tags: [@login, @smoke, @regression]
 └──────────────────────────────────────────────────────
 
-2026-03-04 22:59:45.838 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-04 22:59:50.973 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 2b32af7e-8b93-4f59-a9a9-69f178559fe1
-2026-03-04 22:59:52.000 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-04 22:59:52.000 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-04 22:59:53.154 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-04 22:59:53.154 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-04 22:59:54.228 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-04 22:59:54.228 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-04 22:59:56.334 [main] INFO  com.automation.pages.ProductsPage — Realizando logout
-2026-03-04 22:59:56.334 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 22:59:56.479 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 23:00:00.058 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Logout após login bem-sucedido — Status: PASSED
-2026-03-04 23:00:00.350 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-04 23:00:00.362 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
-│ ▶ Iniciando: Navegar para detalhe do produto e validar elementos
-│   Tags: [@navigation, @regression, @smoke]
-└──────────────────────────────────────────────────────
-
-2026-03-04 23:00:00.362 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-04 23:00:05.220 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: cb1cc3d1-3175-4dfd-b656-034a14e329a4
-2026-03-04 23:00:05.272 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-04 23:00:05.272 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-04 23:00:06.761 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-04 23:00:06.761 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-04 23:00:08.022 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-04 23:00:08.022 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-04 23:00:10.216 [main] INFO  com.automation.pages.ProductsPage — Tocando no primeiro produto
-2026-03-04 23:00:10.272 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-04 23:00:21.544 [main] DEBUG c.automation.pages.ProductDetailPage — Realizando scroll para baixo
-2026-03-04 23:00:23.799 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Navegar para detalhe do produto e validar elementos — Status: PASSED
-2026-03-04 23:00:24.107 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-04 23:00:24.109 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
+2026-03-04 23:24:04.801 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-04 23:24:10.986 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: e8dbc05e-94d1-4abe-9a78-65fadef8066f
+2026-03-04 23:24:12.490 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-04 23:24:12.490 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-04 23:24:13.910 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-04 23:24:13.910 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-04 23:24:15.597 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-04 23:24:15.597 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-04 23:24:18.954 [main] INFO  com.automation.pages.ProductsPage — Realizando logout
+2026-03-04 23:24:18.955 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-04 23:24:19.149 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-04 23:24:23.078 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Logout após login bem-sucedido — Status: PASSED
+2026-03-04 23:24:23.673 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-04 23:24:23.674 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
 ║       ✅ Mobile Automation — Suite Finalizada        ║
 ║       Relatórios disponíveis em: reports/            ║
 ╚══════════════════════════════════════════════════════╝
