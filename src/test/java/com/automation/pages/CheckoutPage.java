@@ -103,13 +103,13 @@ public class CheckoutPage extends BasePage {
 
     public CheckoutPage tapContinue() {
         log.info("Tocando em CONTINUE");
-        tap(continueButton);
+        scrollToAndTap(continueButton);
         return this;
     }
 
     public CheckoutPage tapFinish() {
         log.info("Confirmando pedido (FINISH)");
-        tap(finishButton);
+        scrollToAndTap(finishButton);
         return this;
     }
 

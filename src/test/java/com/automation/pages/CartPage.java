@@ -27,13 +27,13 @@ public class CartPage extends BasePage {
 
     public CheckoutPage tapCheckout() {
         log.info("Iniciando checkout");
-        tap(checkoutButton);
+        scrollToAndTap(checkoutButton);
         return new CheckoutPage();
     }
 
     public ProductsPage tapContinueShopping() {
         log.info("Continuando comprando");
-        tap(continueShoppingButton);
+        scrollToAndTap(continueShoppingButton);
         return new ProductsPage();
     }
 

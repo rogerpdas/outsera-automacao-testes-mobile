@@ -110,4 +110,53 @@ public abstract class BasePage {
     protected void waitInvisible(By locator) {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
+
+    // ── Gestos e Scroll ───────────────────────────────────────────
+
+    protected void scrollDown() {
+        log.debug("Realizando scroll para baixo");
+        var size = driver.manage().window().getSize();
+        int startX = size.getWidth() / 2;
+        int startY = (int) (size.getHeight() * 0.8);
+        int endY = (int) (size.getHeight() * 0.2);
+
+        org.openqa.selenium.interactions.PointerInput finger = new org.openqa.selenium.interactions.PointerInput(org.openqa.selenium.interactions.PointerInput.Kind.TOUCH, "finger");
+        org.openqa.selenium.interactions.Sequence scroll = new org.openqa.selenium.interactions.Sequence(finger, 1);
+        scroll.addAction(finger.createPointerMove(java.time.Duration.ZERO, org.openqa.selenium.interactions.PointerInput.Origin.viewport(), startX, startY));
+        scroll.addAction(finger.createPointerDown(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
+        scroll.addAction(finger.createPointerMove(java.time.Duration.ofMillis(600), org.openqa.selenium.interactions.PointerInput.Origin.viewport(), startX, endY));
+        scroll.addAction(finger.createPointerUp(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(java.util.Collections.singletonList(scroll));
+    }
+
+    protected void scrollToAndTap(WebElement element) {
+        int maxSwipes = 5;
+        for (int i = 0; i < maxSwipes; i++) {
+            try {
+                if (element.isDisplayed()) {
+                    tap(element);
+                    return;
+                }
+            } catch (Exception e) {
+                // Elemento não encontrado, tenta fazer scroll
+                scrollDown();
+            }
+        }
+        throw new org.openqa.selenium.TimeoutException("Elemento não ficou clicável após " + maxSwipes + " scrolls.");
+    }
+
+    protected boolean isVisibleWithScroll(WebElement element) {
+        int maxSwipes = 5;
+        for (int i = 0; i < maxSwipes; i++) {
+            try {
+                if (element.isDisplayed()) {
+                    return true;
+                }
+            } catch (Exception e) {
+                scrollDown();
+            }
+        }
+        return false;
+    }
 }
