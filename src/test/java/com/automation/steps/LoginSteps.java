@@ -17,6 +17,14 @@ public class LoginSteps {
         Assertions.assertTrue(loginPage.isOnLoginPage(), "Tela de login não está visível");
     }
 
+    @Dado("o usuário está autenticado com e-mail {string} e senha {string}")
+    public void autenticarUsuario(String email, String password) {
+        loginPage = new LoginPage();
+        productsPage = loginPage.doLogin(email, password);
+        Assertions.assertTrue(productsPage.isOnProductsPage(),
+                "Login falhou — tela de Produtos não exibida");
+    }
+
     @Quando("o usuário insere o e-mail {string}")
     public void inserirEmail(String email) {
         loginPage.enterUsername(email);
