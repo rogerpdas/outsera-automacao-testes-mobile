@@ -18,7 +18,7 @@ on:
 
 env:
   JAVA_VERSION: '17'
-  NODE_VERSION: '20'       # ✅ Fix: Node 18 → 20 (resolve ERR_REQUIRE_ESM do Appium)
+  NODE_VERSION: '20'
   ANDROID_API_LEVEL: 31
   APK_URL: 'https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk'
 
@@ -89,7 +89,28 @@ jobs:
             --package "system-images;android-${{ env.ANDROID_API_LEVEL }};google_apis;x86_64" \
             --abi "google_apis/x86_64"
 
-      - name: Verificar emulador (health-check)
+      - name: Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Instalar Appium 2 + UiAutomator2
+        run: |
+          npm install -g appium@2.5.4
+          appium driver install uiautomator2@2.9.1
+          echo "Node versão:   $(node --version)"
+          echo "Appium versão: $(appium --version)"
+          appium driver list --installed
+
+      - name: Download APK
+        run: |
+          mkdir -p apps reports
+          curl -fsSL "${{ env.APK_URL }}" -o apps/swag-labs.apk
+          echo "APK: $(ls -lh apps/swag-labs.apk)"
+
+      # O Appium server e os testes rodam DENTRO do mesmo emulator-runner
+      # para garantir que o servidor enxerga o emulador ativo
+      - name: Executar Testes
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ env.ANDROID_API_LEVEL }}
@@ -104,56 +125,10 @@ jobs:
           script: |
             adb wait-for-device
             echo "Emulador pronto: $(adb devices)"
-
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Instalar Appium 2 + UiAutomator2
-        run: |
-          npm install -g appium@2.5.4
-          appium driver install uiautomator2@2.9.1  # ✅ Fix: versão compatível com Appium 2.5.4 (3.x exige Appium 3)
-          echo "Node versão:      $(node --version)"
-          echo "Appium versão:    $(appium --version)"
-          echo "Drivers instalados:"
-          appium driver list --installed
-
-      - name: Download APK
-        run: |
-          mkdir -p apps
-          curl -fsSL "${{ env.APK_URL }}" -o apps/swag-labs.apk
-          echo "APK: $(ls -lh apps/swag-labs.apk)"
-
-      - name: Criar diretório de reports
-        run: mkdir -p reports  # ✅ Fix: garante que o diretório existe antes do Appium tentar logar
-
-      - name: Iniciar Appium Server
-        run: |
-          appium --address 127.0.0.1 --port 4723 --log reports/appium.log &
-          sleep 8  # ✅ Fix: aumentado de 5 → 8s para garantir que o server suba antes dos testes
-          curl -s http://127.0.0.1:4723/status | python3 -m json.tool
-
-      - name: Executar Testes
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: ${{ env.ANDROID_API_LEVEL }}
-          target: google_apis
-          arch: x86_64
-          profile: pixel_4
-          avd-name: ci_avd
-          disable-animations: true
-          emulator-options: >
-            -no-snapshot-save -no-window -gpu swiftshader_indirect
-            -noaudio -no-boot-anim -camera-back none
-          script: |
-            mvn test \
-              -Dplatform=android \
-              -DappiumUrl=http://127.0.0.1:4723 \
-              -DdeviceName="emulator-5554" \
-              -DplatformVersion="12.0" \
-              -Dcucumber.filter.tags="${{ github.event.inputs.tags || '@smoke' }}" \
-              --no-transfer-progress
+            appium --address 127.0.0.1 --port 4723 --log reports/appium.log &
+            sleep 8
+            curl -s http://127.0.0.1:4723/status | python3 -m json.tool
+            mvn test -Dplatform=android -DappiumUrl=http://127.0.0.1:4723 -DdeviceName="emulator-5554" -DplatformVersion="12.0" -Dcucumber.filter.tags="${{ github.event.inputs.tags || '@smoke' }}" --no-transfer-progress
 
       - name: Upload Artefatos (ExtentReports)
         if: always()
