@@ -1,4 +1,4 @@
-name: Mobile Automation CI/CD - Desafio Outsera
+name: 📱 Mobile Automation CI/CD - Desafio Outsera
 
 on:
   push:
@@ -18,7 +18,7 @@ on:
 
 env:
   JAVA_VERSION: '17'
-  NODE_VERSION: '20'       # Fix: Node 18 → 20 (resolve ERR_REQUIRE_ESM do Appium)
+  NODE_VERSION: '20'       # ✅ Fix: Node 18 → 20 (resolve ERR_REQUIRE_ESM do Appium)
   ANDROID_API_LEVEL: 31
   APK_URL: 'https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk'
 
@@ -110,12 +110,14 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Instalar Appium 2 + UiAutomator2  # Fix: @latest → @2.5.4 (versão estável compatível com Node 20)
+      - name: Instalar Appium 2 + UiAutomator2
         run: |
           npm install -g appium@2.5.4
-          appium driver install uiautomator2
-          echo "Node versão:   $(node --version)"
-          echo "Appium versão: $(appium --version)"
+          appium driver install uiautomator2@2.9.1  # ✅ Fix: versão compatível com Appium 2.5.4 (3.x exige Appium 3)
+          echo "Node versão:      $(node --version)"
+          echo "Appium versão:    $(appium --version)"
+          echo "Drivers instalados:"
+          appium driver list --installed
 
       - name: Download APK
         run: |
@@ -124,12 +126,12 @@ jobs:
           echo "APK: $(ls -lh apps/swag-labs.apk)"
 
       - name: Criar diretório de reports
-        run: mkdir -p reports  # Fix: garante que o diretório existe antes do Appium tentar logar
+        run: mkdir -p reports  # ✅ Fix: garante que o diretório existe antes do Appium tentar logar
 
       - name: Iniciar Appium Server
         run: |
           appium --address 127.0.0.1 --port 4723 --log reports/appium.log &
-          sleep 8  # Fix: aumentado de 5 → 8s para garantir que o server suba antes dos testes
+          sleep 8  # ✅ Fix: aumentado de 5 → 8s para garantir que o server suba antes dos testes
           curl -s http://127.0.0.1:4723/status | python3 -m json.tool
 
       - name: Executar Testes
@@ -181,7 +183,7 @@ jobs:
     steps:
       - name: Escrever sumário
         run: |
-          echo "## Mobile Automation — Resultados" >> $GITHUB_STEP_SUMMARY
+          echo "## 📱 Mobile Automation — Resultados" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Campo         | Valor |" >> $GITHUB_STEP_SUMMARY
           echo "|---------------|-------|" >> $GITHUB_STEP_SUMMARY
@@ -193,5 +195,5 @@ jobs:
           echo "| Plataforma    | Android API ${{ env.ANDROID_API_LEVEL }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Tags          | \`${{ github.event.inputs.tags || '@smoke' }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Relatório     | [ExtentReports](https://rogerpdas.github.io/outsera-automacao-testes-mobile/index.html) |" >> $GITHUB_STEP_SUMMARY
-          echo "> Artefatos disponíveis por 30 dias na aba **Actions**." >> $GITHUB_STEP_SUMMARY
+          echo "| Relatório     | [ExtentReports](https://rogerpdas.github.io/outsera-automacao-testes-mobile/) |" >> $GITHUB_STEP_SUMMARY
+          echo "> 📦 Artefatos disponíveis por 30 dias na aba **Actions**." >> $GITHUB_STEP_SUMMARY
