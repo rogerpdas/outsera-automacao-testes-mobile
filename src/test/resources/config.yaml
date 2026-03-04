@@ -1,0 +1,27 @@
+appium:
+  url: "http://127.0.0.1:4723/wd/hub"
+  implicitWait: 10
+  explicitWait: 20
+
+android:
+  platformName: "Android"
+  platformVersion: "10.0"
+  deviceName: "emulator-5554"
+  app: "apps/swag-labs.apk"
+  automationName: "UiAutomator2"
+
+ios:
+  platformName: "iOS"
+  platformVersion: "16.0"
+  deviceName: "iPhone 14"
+  app: "apps/swag-labs.app"
+  automationName: "XCUITest"
+
+credentials:
+  validUser:
+    username: "standard_user"
+    password: "secret_sauce"
+
+report:
+  outputPath: "reports"
+  screenshotsPath: "reports/screenshots"

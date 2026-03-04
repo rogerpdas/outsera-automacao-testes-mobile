@@ -1,0 +1,13 @@
+target/
+*.class
+.idea/
+*.iml
+.DS_Store
+*.log
+appium.log
+reports/
+!reports/.gitkeep
+apps/*.apk
+apps/*.ipa
+apps/*.app
+!apps/.gitkeep
