@@ -1,5 +1,5 @@
 appium:
-  url: "http://127.0.0.1:4723/wd/hub"
+  url: "http://127.0.0.1:4723"
   implicitWait: 10
   explicitWait: 20
 

@@ -91,3 +91,9 @@ public class NavigationSteps {
         }
     }
 }
+
+    @Entao("o usuário deve estar na tela de Produtos")
+    public void validarNaTelaDeProdutos() {
+        Assertions.assertTrue(productsPage.isOnProductsPage(),
+                "Usuário não voltou para a tela de Produtos");
+    }
