@@ -188,16 +188,16 @@ Gerados automaticamente após a execução:
 
 ```bash
 # ExtentReports (principal — dark theme)
-open reports/ExtentReport.html
+open reports/index.html
 ```
 
 > **Captura de Tela (Screenshots):** Em caso de falha no teste, o framework captura automaticamente uma imagem da tela e anexa tanto ao diretório `reports/screenshots/` quanto **embutida diretamente no relatório do ExtentReports**.
 
-| Relatório                  | Caminho                                                   |
+| Relatório | Caminho |
 |----------------------------|-----------------------------------------------------------|
-| ExtentReports              | `reports/ExtentReport.html`                               |
-| Screenshots de falhas      | `reports/screenshots/`                                    |
-| Log completo               | `reports/automation.log`                                  |
+| **ExtentReports (HTML)**   | `reports/index.html`                               |
+| **Evidências (Screenshots)** | `reports/screenshots/`                             |       |
+| **Log completo**           | `reports/automation.log`                                  |
 
 ---
 
@@ -207,7 +207,7 @@ Pipeline em `.github/workflows/mobile-ci.yml`:
 
 Observação: O pipeline está configurado para rodar apenas no Windows, mas pode ser adaptado para outras plataformas.
 Além disso, após a conclusão do pipeline, os relatórios são gerados automaticamente e podem ser acessados no GitHub Actions Summary, ou
-através da url para o gitPage - https://rogerpdas.github.io/outsera-automacao-testes-mobile/
+através da url para o gitPage - https://rogerpdas.github.io/outsera-automacao-testes-mobile/index.html.
 
 **Gatilhos:**
 - Push para `main` ou `develop`
