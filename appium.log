@@ -1,0 +1,4 @@
+2026-03-04 00:42:49:339 [HTTP] --> GET /status {}
+2026-03-04 00:42:49:341 [AppiumDriver@6df9] Calling AppiumDriver.getStatus() with args: []
+2026-03-04 00:42:49:342 [AppiumDriver@6df9] Responding to client with driver.getStatus() result: {"ready":true,"message":"The server is ready to accept new connections","build":{"version":"2.5.4"}}
+2026-03-04 00:42:49:346 [HTTP] <-- GET /status 200 7 ms - 110 
