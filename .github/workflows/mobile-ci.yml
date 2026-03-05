@@ -1,4 +1,4 @@
-name: 📱 Mobile Automation CI/CD - Desafio Outsera
+name: Mobile Automation CI/CD - Desafio Outsera
 
 on:
   push:
@@ -108,7 +108,7 @@ jobs:
           curl -fsSL "${{ env.APK_URL }}" -o apps/swag-labs.apk
           echo "APK: $(ls -lh apps/swag-labs.apk)"
 
-      # ✅ FIX: Appium é iniciado e encerrado DENTRO do script do emulator-runner
+      # FIX: Appium é iniciado e encerrado DENTRO do script do emulator-runner
       # para garantir que nenhum processo fique orphan após os testes.
       - name: Executar Testes
         uses: reactivecircus/android-emulator-runner@v2
@@ -119,30 +119,25 @@ jobs:
           profile: pixel_4
           avd-name: ci_avd
           disable-animations: true
-          # ✅ FIX: -no-snapshot-save já estava correto; adicionado -wipe-data
-          # para evitar estado sujo entre execuções e reduzir travamento no shutdown
-          emulator-options: >
-            -no-snapshot-save -no-window -gpu swiftshader_indirect
-            -noaudio -no-boot-anim -camera-back none -wipe-data
+          # FIX: emulator-options em linha única — YAML '>' junta com espaço
+          # mas alguns runners interpretam as quebras como argumentos separados.
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -wipe-data
           script: |
             set -e
 
-            echo "⏳ Aguardando emulador ficar pronto..."
+            echo "Aguardando emulador ficar pronto..."
             adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 2; done'
-            echo "✅ Emulador pronto: $(adb devices)"
+            echo "Emulador pronto: $(adb devices)"
 
-            echo "🚀 Iniciando Appium em background..."
-            appium --address 127.0.0.1 --port 4723 \
-              --log reports/appium.log \
-              --log-timestamp \
-              --log-no-colors &
+            echo "Iniciando Appium em background..."
+            appium --address 127.0.0.1 --port 4723 --log reports/appium.log --log-timestamp --log-no-colors &
             APPIUM_PID=$!
             echo "Appium PID: $APPIUM_PID"
 
-            echo "⏳ Aguardando Appium inicializar..."
+            echo "Aguardando Appium inicializar..."
             for i in $(seq 1 15); do
               if curl -sf http://127.0.0.1:4723/status > /dev/null 2>&1; then
-                echo "✅ Appium respondendo após ${i}s"
+                echo "Appium respondendo após ${i}s"
                 break
               fi
               echo "  tentativa $i/15..."
@@ -151,42 +146,38 @@ jobs:
 
             curl -s http://127.0.0.1:4723/status | python3 -m json.tool
 
-            echo "🧪 Executando testes Maven..."
-            mvn test \
-              -Dplatform=android \
-              -DappiumUrl=http://127.0.0.1:4723 \
-              -DdeviceName="emulator-5554" \
-              -DplatformVersion="12.0" \
-              -Dcucumber.filter.tags="${{ github.event.inputs.tags || '@smoke' }}" \
-              --no-transfer-progress
+            echo "Executando testes Maven..."
+            # FIX: mvn em linha única — barras '\\' dentro do script: do emulator-runner
+            # são interpretadas literalmente pelo runner, causando erro de argumento.
+            mvn test -Dplatform=android -DappiumUrl=http://127.0.0.1:4723 -DdeviceName="emulator-5554" -DplatformVersion="12.0" -Dcucumber.filter.tags="${{ github.event.inputs.tags || '@smoke' }}" --no-transfer-progress
             MAVEN_EXIT=$?
 
-            # ✅ FIX PRINCIPAL: Encerrar o Appium explicitamente antes do
+            # FIX PRINCIPAL: Encerrar o Appium explicitamente antes do
             # emulator-runner tentar matar o emulador — evita o travamento.
-            echo "🛑 Encerrando Appium (PID $APPIUM_PID)..."
+            echo "Encerrando Appium (PID $APPIUM_PID)..."
             kill $APPIUM_PID 2>/dev/null || true
             wait $APPIUM_PID 2>/dev/null || true
-            echo "✅ Appium encerrado."
+            echo "Appium encerrado."
 
-            # ✅ FIX: Forçar desconexão do ADB antes do shutdown do emulador
-            echo "🛑 Desconectando ADB..."
+            # FIX: Forçar desconexão do ADB antes do shutdown do emulador
+            echo "Desconectando ADB..."
             adb -s emulator-5554 emu kill 2>/dev/null || true
             sleep 3
             adb kill-server 2>/dev/null || true
 
-            echo "🏁 Script finalizado com código $MAVEN_EXIT"
+            echo "Script finalizado com código $MAVEN_EXIT"
             exit $MAVEN_EXIT
 
-      # ✅ FIX: Garantir limpeza mesmo em caso de falha
+      # FIX: Garantir limpeza mesmo em caso de falha
       - name: Encerrar processos residuais
         if: always()
         run: |
-          echo "🧹 Limpando processos residuais..."
+          echo "Limpando processos residuais..."
           pkill -f "appium" 2>/dev/null || true
           pkill -f "qemu-system" 2>/dev/null || true
           pkill -f "emulator" 2>/dev/null || true
           adb kill-server 2>/dev/null || true
-          echo "✅ Limpeza concluída."
+          echo "Limpeza concluída."
 
       - name: Upload Artefatos (ExtentReports)
         if: always()
@@ -216,7 +207,7 @@ jobs:
     steps:
       - name: Escrever sumário
         run: |
-          echo "## 📱 Mobile Automation — Resultados" >> $GITHUB_STEP_SUMMARY
+          echo "## Mobile Automation — Resultados" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Campo         | Valor |" >> $GITHUB_STEP_SUMMARY
           echo "|---------------|-------|" >> $GITHUB_STEP_SUMMARY
@@ -229,4 +220,4 @@ jobs:
           echo "| Tags          | \`${{ github.event.inputs.tags || '@smoke' }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Relatório     | [ExtentReports](https://rogerpdas.github.io/outsera-automacao-testes-mobile/) |" >> $GITHUB_STEP_SUMMARY
-          echo "> 📦 Artefatos disponíveis por 30 dias na aba **Actions**." >> $GITHUB_STEP_SUMMARY
+          echo "> Artefatos disponíveis por 30 dias na aba **Actions**." >> $GITHUB_STEP_SUMMARY
