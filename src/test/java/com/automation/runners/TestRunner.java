@@ -9,10 +9,9 @@ import org.junit.platform.suite.api.*;
 @Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
-@ConfigurationParameter(
-    key = "cucumber.plugin",
-    value = "pretty, " +
-            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-)
+@ConfigurationParameter(key = "cucumber.plugin", value = "pretty, " +
+        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:, " +
+        "com.automation.utils.ExtentReportManager")
 @ConfigurationParameter(key = "cucumber.publish.quiet", value = "true")
-public class TestRunner {}
+public class TestRunner {
+}

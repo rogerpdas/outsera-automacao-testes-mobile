@@ -162,10 +162,34 @@ jobs:
     if: always()
 
     steps:
+      - name: Download Artefatos
+        uses: actions/download-artifact@v4
+        with:
+          name: test-reports-${{ github.run_number }}
+          path: reports/
+
       - name: Escrever sumário
         run: |
+          PASSED=0
+          FAILED=0
+          SKIPPED=0
+          TOTAL=0
+          
+          if [ -f reports/summary.properties ]; then
+            source reports/summary.properties
+          fi
+
           echo "## Mobile Automation — Resultados" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Métricas de Execução" >> $GITHUB_STEP_SUMMARY
+          echo "| Status | Quantidade |" >> $GITHUB_STEP_SUMMARY
+          echo "|:---:|:---:|" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ **Passou** | $PASSED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ **Falhou** | $FAILED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⚠️ **Pulou** | $SKIPPED |" >> $GITHUB_STEP_SUMMARY
+          echo "| 📋 **Total** | $TOTAL |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Ambiente de Execução" >> $GITHUB_STEP_SUMMARY
           echo "| Campo         | Valor |" >> $GITHUB_STEP_SUMMARY
           echo "|---------------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Branch        | \`${{ github.ref_name }}\` |" >> $GITHUB_STEP_SUMMARY
@@ -176,5 +200,6 @@ jobs:
           echo "| Plataforma    | Android API ${{ env.ANDROID_API_LEVEL }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Tags          | \`${{ github.event.inputs.tags || '@smoke' }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Relatório     | [ExtentReports](https://rogerpdas.github.io/outsera-automacao-testes-mobile/) |" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "| Relatório     | [ExtentReports](https://rogerpdas.github.io/outsera-automacao-testes-mobile/index.html) |" >> $GITHUB_STEP_SUMMARY
           echo "> Artefatos disponíveis por 30 dias na aba **Actions**." >> $GITHUB_STEP_SUMMARY
