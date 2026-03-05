@@ -78,6 +78,7 @@ mobile-automation/
 │           ├── extent-config.xml
 │           └── logback-test.xml
 ├── pom.xml
+├── run-tests.sh                        # Script de execução no CI
 └── README.md
 ```
 
@@ -243,8 +244,10 @@ através da url para o gitPage - https://rogerpdas.github.io/outsera-automacao-t
 - **Page Object Model (POM):** cada tela tem sua classe com locators e ações encapsulados
 - **Locators nativos:** `@AndroidFindBy` + `@iOSXCUITFindBy` para suporte cross-platform
 - **ThreadLocal Driver:** suporte à execução paralela com isolamento de sessão
+- **Execução Unificada:** O script `run-tests.sh` encapsula a inicialização do Appium e execução do Maven, resolvendo problemas de persistência no CI/CD e simplificando execuções complexas.
 - **Sealed Platform:** garante que novas plataformas sejam tratadas pelo compilador
 - **Imutabilidade:** `AppConfig` e `FormData` como records — thread-safe por design
 - **Configuração externalizada:** `config.yaml` + override via `-D` para CI/CD
 - **Evidências automáticas:** screenshots em qualquer cenário com falha
+- **Relatórios Customizados:** `ExtentReportManager` gerencia métricas de execução e exporta `summary.properties` para integração rica no GitHub Actions
 - **BDD em português:** cenários legíveis por toda a equipe
