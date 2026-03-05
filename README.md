@@ -11,7 +11,7 @@ Projeto de automação mobile para o desafio da Outsera cobrindo dois cenários 
 - **Tarefa 1 — Login e Navegação:** Testa autenticação, navega entre telas e valida elementos nativos (botões, títulos, mensagens de erro).
 - **Tarefa 2 — Preenchimento de Formulário:** Automatiza o formulário de checkout com validação de campos obrigatórios e confirmação de pedido.
 
-**App alvo:** [Sauce Labs Sample App (Swag Labs)](https://github.com/saucelabs/sample-app-mobile) — APK com login, listagem de produtos e checkout.
+**App:** [Sauce Labs Sample App (Swag Labs)](https://github.com/saucelabs/sample-app-mobile) — APK com login, listagem de produtos e checkout.
 
 ---
 
@@ -250,4 +250,4 @@ através da url para o gitPage - https://rogerpdas.github.io/outsera-automacao-t
 - **Configuração externalizada:** `config.yaml` + override via `-D` para CI/CD
 - **Evidências automáticas:** screenshots em qualquer cenário com falha
 - **Relatórios Customizados:** `ExtentReportManager` gerencia métricas de execução e exporta `summary.properties` para integração rica no GitHub Actions
-- **BDD em português:** cenários legíveis por toda a equipe
+- **BDD em português:** cenários legíveis
