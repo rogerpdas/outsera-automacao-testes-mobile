@@ -1,4 +1,4 @@
-2026-03-05 17:43:28.303 [main] INFO  com.automation.config.ConfigLoader — ╔══════════════════════════════════════════╗
+2026-03-06 05:41:25.896 [main] INFO  com.automation.config.ConfigLoader — ╔══════════════════════════════════════════╗
 ║         Configuração carregada           ║
 ╠══════════════════════════════════════════╣
 ║  Platform   : Android
@@ -6,166 +6,166 @@
 ║  Appium URL : http://127.0.0.1:4723
 ╚══════════════════════════════════════════╝
 
-2026-03-05 17:43:28.310 [main] INFO  c.automation.utils.ScreenshotUtils — Diretório de screenshots: /home/runner/work/outsera-cicd/outsera-cicd/reports/screenshots
-2026-03-05 17:43:28.310 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
+2026-03-06 05:41:25.902 [main] INFO  c.automation.utils.ScreenshotUtils — Diretório de screenshots: /home/runner/work/outsera-cicd/outsera-cicd/reports/screenshots
+2026-03-06 05:41:25.903 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
 ║       📱 Mobile Automation — Suite Iniciada          ║
 ╚══════════════════════════════════════════════════════╝
 
-2026-03-05 17:43:28.583 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-06 05:41:26.179 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Preenchimento completo com dados válidos e envio do pedido
 │   Tags: [@formulario, @regression, @smoke]
 └──────────────────────────────────────────────────────
 
-2026-03-05 17:43:28.584 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-05 17:43:52.754 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 765303f6-4762-44d3-acb9-4e5589b6bcda
-2026-03-05 17:43:53.436 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-05 17:43:53.438 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-05 17:43:55.779 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-05 17:43:55.780 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-05 17:43:57.395 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-05 17:43:57.395 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-05 17:43:59.846 [main] INFO  c.a.steps.FormularioCadastroSteps — Navegando até formulário via fluxo: Produtos → Detalhe → Carrinho → Checkout
-2026-03-05 17:44:00.226 [main] INFO  com.automation.pages.ProductsPage — Tocando no primeiro produto
-2026-03-05 17:44:00.495 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-05 17:44:00.808 [main] INFO  c.automation.pages.ProductDetailPage — Adicionando ao carrinho
-2026-03-05 17:44:10.866 [main] DEBUG c.automation.pages.ProductDetailPage — Realizando scroll para baixo
-2026-03-05 17:44:12.944 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
-2026-03-05 17:44:13.128 [main] INFO  c.automation.pages.ProductDetailPage — Voltando para produtos
-2026-03-05 17:44:13.129 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
-2026-03-05 17:44:14.086 [main] INFO  com.automation.pages.ProductsPage — Abrindo carrinho
-2026-03-05 17:44:14.086 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-05 17:44:15.169 [main] INFO  com.automation.pages.CartPage — Abrindo formulário de cadastro via checkout
-2026-03-05 17:44:16.332 [main] DEBUG com.automation.pages.CartPage — Tap → elemento
-2026-03-05 17:44:17.950 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo formulário: João Silva — CEP 01310-100
-2026-03-05 17:44:17.950 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo nome: João
-2026-03-05 17:44:17.951 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → 'João'
-2026-03-05 17:44:19.247 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo sobrenome: Silva
-2026-03-05 17:44:19.248 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → 'Silva'
-2026-03-05 17:44:20.819 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo CEP: 01310-100
-2026-03-05 17:44:20.820 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → '01310-100'
-2026-03-05 17:44:21.967 [main] INFO  c.a.pages.FormularioCadastroPage — Tocando em CONTINUE
-2026-03-05 17:44:22.465 [main] DEBUG c.a.pages.FormularioCadastroPage — Tap → elemento
-2026-03-05 17:44:24.079 [main] INFO  c.a.pages.FormularioCadastroPage — Finalizando pedido
-2026-03-05 17:44:34.124 [main] DEBUG c.a.pages.FormularioCadastroPage — Realizando scroll para baixo
-2026-03-05 17:44:36.381 [main] DEBUG c.a.pages.FormularioCadastroPage — Tap → elemento
-2026-03-05 17:44:38.738 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Preenchimento completo com dados válidos e envio do pedido — Status: PASSED
-2026-03-05 17:44:39.642 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-05 17:44:39.675 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-06 05:41:26.180 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-06 05:41:47.672 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: b71d3f01-80f2-4b2f-b897-03e353691a2a
+2026-03-06 05:41:48.435 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-06 05:41:48.436 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-06 05:41:51.552 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-06 05:41:51.553 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-06 05:41:53.265 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-06 05:41:53.265 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-06 05:41:56.056 [main] INFO  c.a.steps.FormularioCadastroSteps — Navegando até formulário via fluxo: Produtos → Detalhe → Carrinho → Checkout
+2026-03-06 05:41:56.522 [main] INFO  com.automation.pages.ProductsPage — Tocando no primeiro produto
+2026-03-06 05:41:56.714 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-06 05:41:57.046 [main] INFO  c.automation.pages.ProductDetailPage — Adicionando ao carrinho
+2026-03-06 05:42:07.128 [main] DEBUG c.automation.pages.ProductDetailPage — Realizando scroll para baixo
+2026-03-06 05:42:09.872 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
+2026-03-06 05:42:11.140 [main] INFO  c.automation.pages.ProductDetailPage — Voltando para produtos
+2026-03-06 05:42:11.140 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
+2026-03-06 05:42:12.654 [main] INFO  com.automation.pages.ProductsPage — Abrindo carrinho
+2026-03-06 05:42:12.655 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-06 05:42:13.925 [main] INFO  com.automation.pages.CartPage — Abrindo formulário de cadastro via checkout
+2026-03-06 05:42:15.309 [main] DEBUG com.automation.pages.CartPage — Tap → elemento
+2026-03-06 05:42:17.078 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo formulário: João Silva — CEP 01310-100
+2026-03-06 05:42:17.079 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo nome: João
+2026-03-06 05:42:17.079 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → 'João'
+2026-03-06 05:42:18.090 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo sobrenome: Silva
+2026-03-06 05:42:18.091 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → 'Silva'
+2026-03-06 05:42:19.723 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo CEP: 01310-100
+2026-03-06 05:42:19.724 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → '01310-100'
+2026-03-06 05:42:21.344 [main] INFO  c.a.pages.FormularioCadastroPage — Tocando em CONTINUE
+2026-03-06 05:42:21.941 [main] DEBUG c.a.pages.FormularioCadastroPage — Tap → elemento
+2026-03-06 05:42:23.859 [main] INFO  c.a.pages.FormularioCadastroPage — Finalizando pedido
+2026-03-06 05:42:33.891 [main] DEBUG c.a.pages.FormularioCadastroPage — Realizando scroll para baixo
+2026-03-06 05:42:35.704 [main] DEBUG c.a.pages.FormularioCadastroPage — Tap → elemento
+2026-03-06 05:42:37.513 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Preenchimento completo com dados válidos e envio do pedido — Status: PASSED
+2026-03-06 05:42:38.407 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-06 05:42:38.430 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Login com credenciais válidas
 │   Tags: [@login, @smoke, @regression]
 └──────────────────────────────────────────────────────
 
-2026-03-05 17:44:39.680 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-05 17:44:47.575 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 6871edff-2c45-437a-b041-3dc7db5043a5
-2026-03-05 17:44:49.465 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-05 17:44:49.465 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-05 17:44:50.376 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-05 17:44:50.377 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-05 17:44:51.502 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-05 17:44:51.503 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-05 17:44:53.929 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Login com credenciais válidas — Status: PASSED
-2026-03-05 17:44:54.420 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-05 17:44:54.439 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-06 05:42:38.431 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-06 05:42:46.659 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: edca80e8-c84d-459c-9d83-fdf73e1b6290
+2026-03-06 05:42:48.612 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-06 05:42:48.612 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-06 05:42:50.102 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-06 05:42:50.103 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-06 05:42:51.297 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-06 05:42:51.297 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-06 05:42:54.561 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Login com credenciais válidas — Status: PASSED
+2026-03-06 05:42:54.816 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-06 05:42:54.839 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Logout após login bem-sucedido
 │   Tags: [@login, @smoke, @regression]
 └──────────────────────────────────────────────────────
 
-2026-03-05 17:44:54.440 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-05 17:45:01.008 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: f306f002-bfcd-404f-939a-62f0e7838d8f
-2026-03-05 17:45:02.476 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-05 17:45:02.476 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-05 17:45:03.510 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-05 17:45:03.510 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-05 17:45:04.655 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-05 17:45:04.656 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-05 17:45:06.983 [main] INFO  com.automation.pages.ProductsPage — Realizando logout
-2026-03-05 17:45:06.983 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-05 17:45:07.211 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-05 17:45:11.123 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Logout após login bem-sucedido — Status: PASSED
-2026-03-05 17:45:11.514 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-05 17:45:11.517 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
+2026-03-06 05:42:54.840 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-06 05:43:02.096 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: cdd9029f-dc29-4ea4-bb7b-5b34953fff11
+2026-03-06 05:43:03.435 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-06 05:43:03.436 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-06 05:43:04.019 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-06 05:43:04.019 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-06 05:43:05.138 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-06 05:43:05.138 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-06 05:43:07.421 [main] INFO  com.automation.pages.ProductsPage — Realizando logout
+2026-03-06 05:43:07.421 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-06 05:43:07.602 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-06 05:43:11.477 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Logout após login bem-sucedido — Status: PASSED
+2026-03-06 05:43:11.805 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-06 05:43:11.810 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
 ║       ✅ Mobile Automation — Suite Finalizada        ║
 ║       Relatórios disponíveis em: reports/            ║
 ╚══════════════════════════════════════════════════════╝
 
-2026-03-05 17:45:12.111 [main] INFO  c.automation.utils.ScreenshotUtils — Diretório de screenshots: /home/runner/work/outsera-cicd/outsera-cicd/reports/screenshots
-2026-03-05 17:45:12.111 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
+2026-03-06 05:43:12.286 [main] INFO  c.automation.utils.ScreenshotUtils — Diretório de screenshots: /home/runner/work/outsera-cicd/outsera-cicd/reports/screenshots
+2026-03-06 05:43:12.286 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
 ║       📱 Mobile Automation — Suite Iniciada          ║
 ╚══════════════════════════════════════════════════════╝
 
-2026-03-05 17:45:12.130 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-06 05:43:12.308 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Preenchimento completo com dados válidos e envio do pedido
 │   Tags: [@formulario, @regression, @smoke]
 └──────────────────────────────────────────────────────
 
-2026-03-05 17:45:12.130 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-05 17:45:18.356 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 86d07605-4836-4765-87e9-ac41161af956
-2026-03-05 17:45:18.433 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-05 17:45:18.433 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-05 17:45:20.775 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-05 17:45:20.776 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-05 17:45:21.846 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-05 17:45:21.846 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-05 17:45:24.199 [main] INFO  c.a.steps.FormularioCadastroSteps — Navegando até formulário via fluxo: Produtos → Detalhe → Carrinho → Checkout
-2026-03-05 17:45:24.272 [main] INFO  com.automation.pages.ProductsPage — Tocando no primeiro produto
-2026-03-05 17:45:24.362 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-05 17:45:24.622 [main] INFO  c.automation.pages.ProductDetailPage — Adicionando ao carrinho
-2026-03-05 17:45:36.023 [main] DEBUG c.automation.pages.ProductDetailPage — Realizando scroll para baixo
-2026-03-05 17:45:38.156 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
-2026-03-05 17:45:38.287 [main] INFO  c.automation.pages.ProductDetailPage — Voltando para produtos
-2026-03-05 17:45:38.288 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
-2026-03-05 17:45:39.149 [main] INFO  com.automation.pages.ProductsPage — Abrindo carrinho
-2026-03-05 17:45:39.149 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-05 17:45:40.020 [main] INFO  com.automation.pages.CartPage — Abrindo formulário de cadastro via checkout
-2026-03-05 17:45:41.144 [main] DEBUG com.automation.pages.CartPage — Tap → elemento
-2026-03-05 17:45:42.426 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo formulário: João Silva — CEP 01310-100
-2026-03-05 17:45:42.427 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo nome: João
-2026-03-05 17:45:42.427 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → 'João'
-2026-03-05 17:45:43.849 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo sobrenome: Silva
-2026-03-05 17:45:43.849 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → 'Silva'
-2026-03-05 17:45:45.402 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo CEP: 01310-100
-2026-03-05 17:45:45.402 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → '01310-100'
-2026-03-05 17:45:46.443 [main] INFO  c.a.pages.FormularioCadastroPage — Tocando em CONTINUE
-2026-03-05 17:45:46.955 [main] DEBUG c.a.pages.FormularioCadastroPage — Tap → elemento
-2026-03-05 17:45:48.304 [main] INFO  c.a.pages.FormularioCadastroPage — Finalizando pedido
-2026-03-05 17:45:58.333 [main] DEBUG c.a.pages.FormularioCadastroPage — Realizando scroll para baixo
-2026-03-05 17:46:00.006 [main] DEBUG c.a.pages.FormularioCadastroPage — Tap → elemento
-2026-03-05 17:46:01.754 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Preenchimento completo com dados válidos e envio do pedido — Status: PASSED
-2026-03-05 17:46:02.043 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-05 17:46:02.078 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-06 05:43:12.309 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-06 05:43:16.896 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: fb306835-0ec1-4bef-8c32-b4583e95db6d
+2026-03-06 05:43:16.961 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-06 05:43:16.961 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-06 05:43:18.971 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-06 05:43:18.972 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-06 05:43:20.017 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-06 05:43:20.017 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-06 05:43:22.264 [main] INFO  c.a.steps.FormularioCadastroSteps — Navegando até formulário via fluxo: Produtos → Detalhe → Carrinho → Checkout
+2026-03-06 05:43:22.372 [main] INFO  com.automation.pages.ProductsPage — Tocando no primeiro produto
+2026-03-06 05:43:22.786 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-06 05:43:23.019 [main] INFO  c.automation.pages.ProductDetailPage — Adicionando ao carrinho
+2026-03-06 05:43:33.046 [main] DEBUG c.automation.pages.ProductDetailPage — Realizando scroll para baixo
+2026-03-06 05:43:34.830 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
+2026-03-06 05:43:34.973 [main] INFO  c.automation.pages.ProductDetailPage — Voltando para produtos
+2026-03-06 05:43:34.973 [main] DEBUG c.automation.pages.ProductDetailPage — Tap → elemento
+2026-03-06 05:43:35.843 [main] INFO  com.automation.pages.ProductsPage — Abrindo carrinho
+2026-03-06 05:43:35.844 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-06 05:43:36.755 [main] INFO  com.automation.pages.CartPage — Abrindo formulário de cadastro via checkout
+2026-03-06 05:43:37.808 [main] DEBUG com.automation.pages.CartPage — Tap → elemento
+2026-03-06 05:43:39.045 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo formulário: João Silva — CEP 01310-100
+2026-03-06 05:43:39.045 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo nome: João
+2026-03-06 05:43:39.045 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → 'João'
+2026-03-06 05:43:39.993 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo sobrenome: Silva
+2026-03-06 05:43:39.994 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → 'Silva'
+2026-03-06 05:43:41.046 [main] INFO  c.a.pages.FormularioCadastroPage — Preenchendo CEP: 01310-100
+2026-03-06 05:43:41.046 [main] DEBUG c.a.pages.FormularioCadastroPage — Fill → '01310-100'
+2026-03-06 05:43:42.587 [main] INFO  c.a.pages.FormularioCadastroPage — Tocando em CONTINUE
+2026-03-06 05:43:43.101 [main] DEBUG c.a.pages.FormularioCadastroPage — Tap → elemento
+2026-03-06 05:43:44.374 [main] INFO  c.a.pages.FormularioCadastroPage — Finalizando pedido
+2026-03-06 05:43:54.396 [main] DEBUG c.a.pages.FormularioCadastroPage — Realizando scroll para baixo
+2026-03-06 05:43:56.565 [main] DEBUG c.a.pages.FormularioCadastroPage — Tap → elemento
+2026-03-06 05:43:58.029 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Preenchimento completo com dados válidos e envio do pedido — Status: PASSED
+2026-03-06 05:43:58.548 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-06 05:43:58.574 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Login com credenciais válidas
 │   Tags: [@login, @smoke, @regression]
 └──────────────────────────────────────────────────────
 
-2026-03-05 17:46:02.078 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-05 17:46:06.849 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 8616540c-e067-4ce0-b9f6-d2cc8d1f46ac
-2026-03-05 17:46:07.837 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-05 17:46:07.838 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-05 17:46:08.406 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-05 17:46:08.407 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-05 17:46:10.115 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-05 17:46:10.115 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-05 17:46:12.188 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Login com credenciais válidas — Status: PASSED
-2026-03-05 17:46:12.429 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-05 17:46:12.444 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
+2026-03-06 05:43:58.574 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-06 05:44:03.447 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: f43f856a-cfad-46d2-a5f9-1d9f00528d7b
+2026-03-06 05:44:04.446 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-06 05:44:04.447 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-06 05:44:05.641 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-06 05:44:05.642 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-06 05:44:07.170 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-06 05:44:07.171 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-06 05:44:09.343 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Login com credenciais válidas — Status: PASSED
+2026-03-06 05:44:09.526 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-06 05:44:09.538 [main] INFO  com.automation.hooks.Hooks — ┌──────────────────────────────────────────────────────
 │ ▶ Iniciando: Logout após login bem-sucedido
 │   Tags: [@login, @smoke, @regression]
 └──────────────────────────────────────────────────────
 
-2026-03-05 17:46:12.445 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
-2026-03-05 17:46:17.007 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: b46d41a4-fdd5-436b-a4f1-4c281c4b4483
-2026-03-05 17:46:17.991 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
-2026-03-05 17:46:17.992 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
-2026-03-05 17:46:19.220 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
-2026-03-05 17:46:19.220 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
-2026-03-05 17:46:20.757 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
-2026-03-05 17:46:20.757 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
-2026-03-05 17:46:22.938 [main] INFO  com.automation.pages.ProductsPage — Realizando logout
-2026-03-05 17:46:22.938 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-05 17:46:23.051 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
-2026-03-05 17:46:26.668 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Logout após login bem-sucedido — Status: PASSED
-2026-03-05 17:46:26.875 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
-2026-03-05 17:46:26.879 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
+2026-03-06 05:44:09.550 [main] INFO  c.automation.drivers.DriverManager — Inicializando driver | plataforma=android | device=emulator-5554
+2026-03-06 05:44:14.341 [main] INFO  c.automation.drivers.DriverManager — Driver iniciado com sucesso. Session ID: 2e6cb1d2-4fd8-45d3-953d-812ca1784b97
+2026-03-06 05:44:15.341 [main] INFO  com.automation.pages.LoginPage — Preenchendo username: standard_user
+2026-03-06 05:44:15.341 [main] DEBUG com.automation.pages.LoginPage — Fill → 'standard_user'
+2026-03-06 05:44:15.927 [main] INFO  com.automation.pages.LoginPage — Preenchendo password
+2026-03-06 05:44:15.927 [main] DEBUG com.automation.pages.LoginPage — Fill → 'secret_sauce'
+2026-03-06 05:44:17.150 [main] INFO  com.automation.pages.LoginPage — Tocando em LOGIN
+2026-03-06 05:44:17.150 [main] DEBUG com.automation.pages.LoginPage — Tap → elemento
+2026-03-06 05:44:19.134 [main] INFO  com.automation.pages.ProductsPage — Realizando logout
+2026-03-06 05:44:19.134 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-06 05:44:19.272 [main] DEBUG com.automation.pages.ProductsPage — Tap → elemento
+2026-03-06 05:44:22.874 [main] INFO  com.automation.hooks.Hooks — ◀ Finalizando: Logout após login bem-sucedido — Status: PASSED
+2026-03-06 05:44:23.278 [main] INFO  c.automation.drivers.DriverManager — Driver encerrado.
+2026-03-06 05:44:23.279 [main] INFO  com.automation.hooks.Hooks — ╔══════════════════════════════════════════════════════╗
 ║       ✅ Mobile Automation — Suite Finalizada        ║
 ║       Relatórios disponíveis em: reports/            ║
 ╚══════════════════════════════════════════════════════╝
