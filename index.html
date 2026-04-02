@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">📱 Mobile Automation — Sauce Labs Demo App</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">01/04/2026 06:23:09</span></a>
+<a href="#"><span class="badge badge-primary">02/04/2026 06:08:06</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('category-view')">
@@ -71,7 +76,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -79,31 +84,31 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@formulario</a><a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@smoke</a><a class="dropdown-item" href="#">@login</a>
+<a class="dropdown-item" href="#">@formulario</a><a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@login</a><a class="dropdown-item" href="#">@smoke</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais</p>
             <p class="text-sm">
-              <span>6:23:10 AM</span> / <span>00:01:11:962</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:08:08 AM</span> / <span>00:00:42:982</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais</h5>
-<span class='badge badge-success'>04.01.2026 6:23:10 AM</span>
-<span class='badge badge-danger'>04.01.2026 6:24:22 AM</span>
-<span class='badge badge-default'>00:01:11:962</span>
+<h5 class="test-status text-fail">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais</h5>
+<span class='badge badge-success'>04.02.2026 6:08:08 AM</span>
+<span class='badge badge-danger'>04.02.2026 6:08:51 AM</span>
+<span class='badge badge-default'>00:00:42:982</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -116,50 +121,205 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Preenchimento completo com dados válidos e envio do pedido</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Preenchimento completo com dados válidos e envio do pedido</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.autenticarUsuario(java.lang.String,java.lang.String)">
+              <div class="step fail-bg" title="com.automation.steps.LoginSteps.autenticarUsuario(java.lang.String,java.lang.String)">
                 <span>Dado o usuário está autenticado com e-mail "standard_user" e senha "secret_sauce"</span>
       <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({AppiumBy.accessibilityId: test-Username}) (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.automation.pages.BasePage.waitVisible(BasePage.java:45)
+	at com.automation.pages.BasePage.fill(BasePage.java:70)
+	at com.automation.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at com.automation.pages.LoginPage.doLogin(LoginPage.java:59)
+	at com.automation.steps.LoginSteps.autenticarUsuario(LoginSteps.java:23)
+	at ✽.o usuário está autenticado com e-mail "standard_user" e senha "secret_sauce"(classpath:features/formulario_cadastro.feature:6)
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.accessibilityId: test-Username})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$0v7O5UdT.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	at com.automation.pages.BasePage.waitVisible(BasePage.java:45)
+	at com.automation.pages.BasePage.fill(BasePage.java:70)
+	at com.automation.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at com.automation.pages.LoginPage.doLogin(LoginPage.java:59)
+	at com.automation.steps.LoginSteps.autenticarUsuario(LoginSteps.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:76)
+	at org.junit.platform.suite.engine.SuiteLauncher.execute(SuiteLauncher.java:63)
+	at org.junit.platform.suite.engine.SuiteTestDescriptor.execute(SuiteTestDescriptor.java:128)
+	at org.junit.platform.suite.engine.SuiteTestEngine.lambda$execute$0(SuiteTestEngine.java:73)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.junit.platform.suite.engine.SuiteTestEngine.execute(SuiteTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@9be7319 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 102 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.accessibilityId: test-Username})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 104 more
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.navegarAteFormulario()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.navegarAteFormulario()">
                 <span>E o usuário autenticado navega até o formulário de cadastro</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.preencherFormularioComDados(io.cucumber.datatable.DataTable)">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.preencherFormularioComDados(io.cucumber.datatable.DataTable)">
                 <span>Quando o usuário preenche o formulário de cadastro com:</span>
       <div><table class='markup-table table '><tr><td>nome</td><td>sobrenome</td><td>cep</td></tr><tr><td>João</td><td>Silva</td><td>01310-100</td></tr></table>
       </div>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.confirmarFormulario()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.confirmarFormulario()">
                 <span>E o usuário confirma o formulário</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.validarResumoPedido()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.validarResumoPedido()">
                 <span>Então o resumo do pedido deve ser exibido</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.finalizarPedido()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.finalizarPedido()">
                 <span>Quando o usuário finaliza o pedido</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.validarConclusaoPedido()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.validarConclusaoPedido()">
                 <span>Então o pedido deve ser concluído com sucesso</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.validarMensagemAgradecimento()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.validarMensagemAgradecimento()">
                 <span>E a mensagem de agradecimento deve ser exibida</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>com.automation.hooks.Hooks.scenarioTearDown(io.cucumber.java.Scenario)</span>
+      <div>📸 Evidência de falha — Preenchimento completo com dados válidos e envio do pedido
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/embedded1.png' src="screenshots/embedded1.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -169,25 +329,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="13"
+        <li class="test-item"  status="fail" test-id="13"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Login - Autenticação de Usuário</p>
             <p class="text-sm">
-              <span>6:24:22 AM</span> / <span>00:00:28:581</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:08:51 AM</span> / <span>00:00:55:947</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Login - Autenticação de Usuário</h5>
-<span class='badge badge-success'>04.01.2026 6:24:22 AM</span>
-<span class='badge badge-danger'>04.01.2026 6:24:51 AM</span>
-<span class='badge badge-default'>00:00:28:581</span>
+<h5 class="test-status text-fail">Login - Autenticação de Usuário</h5>
+<span class='badge badge-success'>04.02.2026 6:08:51 AM</span>
+<span class='badge badge-danger'>04.02.2026 6:09:47 AM</span>
+<span class='badge badge-default'>00:00:55:947</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -200,38 +360,62 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>Login com credenciais válidas</div>
+        <div class="node" id="14"><span class="badge log fail-bg mr-2">Fail</span>Login com credenciais válidas</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin()">
+              <div class="step fail-bg" title="com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin()">
                 <span>Dado o aplicativo está aberto na tela de login</span>
       <div>
+        <textarea disabled class="code-block">org.opentest4j.AssertionFailedError: Tela de login não está visível ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin(LoginSteps.java:17)
+	at ✽.o aplicativo está aberto na tela de login(classpath:features/login.feature:6)
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.inserirEmail(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.inserirEmail(java.lang.String)">
                 <span>Quando o usuário insere o e-mail "standard_user"</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.inserirSenha(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.inserirSenha(java.lang.String)">
                 <span>E o usuário insere a senha "secret_sauce"</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.tocarBotaoLogin()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.tocarBotaoLogin()">
                 <span>E o usuário toca no botão de login</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.validarTelaDeProdutos()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.validarTelaDeProdutos()">
                 <span>Então o usuário deve ser redirecionado para a tela de Produtos</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.validarTitulo(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.validarTitulo(java.lang.String)">
                 <span>E o título "PRODUCTS" deve estar visível</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>com.automation.hooks.Hooks.scenarioTearDown(io.cucumber.java.Scenario)</span>
+      <div>📸 Evidência de falha — Login com credenciais válidas
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/embedded2.png' src="screenshots/embedded2.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -241,43 +425,67 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>Logout após login bem-sucedido</div>
+        <div class="node" id="23"><span class="badge log fail-bg mr-2">Fail</span>Logout após login bem-sucedido</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin()">
+              <div class="step fail-bg" title="com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin()">
                 <span>Dado o aplicativo está aberto na tela de login</span>
       <div>
+        <textarea disabled class="code-block">org.opentest4j.AssertionFailedError: Tela de login não está visível ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin(LoginSteps.java:17)
+	at ✽.o aplicativo está aberto na tela de login(classpath:features/login.feature:6)
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.inserirEmail(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.inserirEmail(java.lang.String)">
                 <span>Quando o usuário insere o e-mail "standard_user"</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.inserirSenha(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.inserirSenha(java.lang.String)">
                 <span>E o usuário insere a senha "secret_sauce"</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.tocarBotaoLogin()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.tocarBotaoLogin()">
                 <span>E o usuário toca no botão de login</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.validarTelaDeProdutos()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.validarTelaDeProdutos()">
                 <span>Então o usuário deve ser redirecionado para a tela de Produtos</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.realizarLogout()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.realizarLogout()">
                 <span>Quando o usuário realiza o logout</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.validarTelaDeLogin()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.validarTelaDeLogin()">
                 <span>Então o usuário deve estar na tela de login</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>com.automation.hooks.Hooks.scenarioTearDown(io.cucumber.java.Scenario)</span>
+      <div>📸 Evidência de falha — Logout após login bem-sucedido
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/embedded3.png' src="screenshots/embedded3.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -287,25 +495,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="33"
+        <li class="test-item"  status="fail" test-id="33"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais</p>
             <p class="text-sm">
-              <span>6:24:52 AM</span> / <span>00:00:47:539</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:09:47 AM</span> / <span>00:00:26:981</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais</h5>
-<span class='badge badge-success'>04.01.2026 6:24:52 AM</span>
-<span class='badge badge-danger'>04.01.2026 6:25:39 AM</span>
-<span class='badge badge-default'>00:00:47:539</span>
+<h5 class="test-status text-fail">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais</h5>
+<span class='badge badge-success'>04.02.2026 6:09:47 AM</span>
+<span class='badge badge-danger'>04.02.2026 6:10:14 AM</span>
+<span class='badge badge-default'>00:00:26:981</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -318,50 +526,205 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="34"><span class="badge log pass-bg mr-2">Pass</span>Preenchimento completo com dados válidos e envio do pedido</div>
+        <div class="node" id="34"><span class="badge log fail-bg mr-2">Fail</span>Preenchimento completo com dados válidos e envio do pedido</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.autenticarUsuario(java.lang.String,java.lang.String)">
+              <div class="step fail-bg" title="com.automation.steps.LoginSteps.autenticarUsuario(java.lang.String,java.lang.String)">
                 <span>Dado o usuário está autenticado com e-mail "standard_user" e senha "secret_sauce"</span>
       <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({AppiumBy.accessibilityId: test-Username}) (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.automation.pages.BasePage.waitVisible(BasePage.java:45)
+	at com.automation.pages.BasePage.fill(BasePage.java:70)
+	at com.automation.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at com.automation.pages.LoginPage.doLogin(LoginPage.java:59)
+	at com.automation.steps.LoginSteps.autenticarUsuario(LoginSteps.java:23)
+	at ✽.o usuário está autenticado com e-mail "standard_user" e senha "secret_sauce"(classpath:features/formulario_cadastro.feature:6)
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.accessibilityId: test-Username})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$mtMogWnz.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	at com.automation.pages.BasePage.waitVisible(BasePage.java:45)
+	at com.automation.pages.BasePage.fill(BasePage.java:70)
+	at com.automation.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at com.automation.pages.LoginPage.doLogin(LoginPage.java:59)
+	at com.automation.steps.LoginSteps.autenticarUsuario(LoginSteps.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:76)
+	at org.junit.platform.suite.engine.SuiteLauncher.execute(SuiteLauncher.java:63)
+	at org.junit.platform.suite.engine.SuiteTestDescriptor.execute(SuiteTestDescriptor.java:128)
+	at org.junit.platform.suite.engine.SuiteTestEngine.lambda$execute$0(SuiteTestEngine.java:73)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.junit.platform.suite.engine.SuiteTestEngine.execute(SuiteTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@41d877bb (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 102 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.accessibilityId: test-Username})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 104 more
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.navegarAteFormulario()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.navegarAteFormulario()">
                 <span>E o usuário autenticado navega até o formulário de cadastro</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.preencherFormularioComDados(io.cucumber.datatable.DataTable)">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.preencherFormularioComDados(io.cucumber.datatable.DataTable)">
                 <span>Quando o usuário preenche o formulário de cadastro com:</span>
       <div><table class='markup-table table '><tr><td>nome</td><td>sobrenome</td><td>cep</td></tr><tr><td>João</td><td>Silva</td><td>01310-100</td></tr></table>
       </div>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.confirmarFormulario()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.confirmarFormulario()">
                 <span>E o usuário confirma o formulário</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.validarResumoPedido()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.validarResumoPedido()">
                 <span>Então o resumo do pedido deve ser exibido</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.finalizarPedido()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.finalizarPedido()">
                 <span>Quando o usuário finaliza o pedido</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.validarConclusaoPedido()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.validarConclusaoPedido()">
                 <span>Então o pedido deve ser concluído com sucesso</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.FormularioCadastroSteps.validarMensagemAgradecimento()">
+              <div class="step skip-bg" title="com.automation.steps.FormularioCadastroSteps.validarMensagemAgradecimento()">
                 <span>E a mensagem de agradecimento deve ser exibida</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>com.automation.hooks.Hooks.scenarioTearDown(io.cucumber.java.Scenario)</span>
+      <div>📸 Evidência de falha — Preenchimento completo com dados válidos e envio do pedido
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/embedded4.png' src="screenshots/embedded4.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -371,25 +734,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="45"
+        <li class="test-item"  status="fail" test-id="45"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Login - Autenticação de Usuário</p>
             <p class="text-sm">
-              <span>6:25:39 AM</span> / <span>00:00:23:932</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:10:14 AM</span> / <span>00:00:51:416</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Login - Autenticação de Usuário</h5>
-<span class='badge badge-success'>04.01.2026 6:25:39 AM</span>
-<span class='badge badge-danger'>04.01.2026 6:26:03 AM</span>
-<span class='badge badge-default'>00:00:23:932</span>
+<h5 class="test-status text-fail">Login - Autenticação de Usuário</h5>
+<span class='badge badge-success'>04.02.2026 6:10:14 AM</span>
+<span class='badge badge-danger'>04.02.2026 6:11:06 AM</span>
+<span class='badge badge-default'>00:00:51:416</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=45</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -402,38 +765,62 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="46"><span class="badge log pass-bg mr-2">Pass</span>Login com credenciais válidas</div>
+        <div class="node" id="46"><span class="badge log fail-bg mr-2">Fail</span>Login com credenciais válidas</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin()">
+              <div class="step fail-bg" title="com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin()">
                 <span>Dado o aplicativo está aberto na tela de login</span>
       <div>
+        <textarea disabled class="code-block">org.opentest4j.AssertionFailedError: Tela de login não está visível ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin(LoginSteps.java:17)
+	at ✽.o aplicativo está aberto na tela de login(classpath:features/login.feature:6)
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.inserirEmail(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.inserirEmail(java.lang.String)">
                 <span>Quando o usuário insere o e-mail "standard_user"</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.inserirSenha(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.inserirSenha(java.lang.String)">
                 <span>E o usuário insere a senha "secret_sauce"</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.tocarBotaoLogin()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.tocarBotaoLogin()">
                 <span>E o usuário toca no botão de login</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.validarTelaDeProdutos()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.validarTelaDeProdutos()">
                 <span>Então o usuário deve ser redirecionado para a tela de Produtos</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.validarTitulo(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.validarTitulo(java.lang.String)">
                 <span>E o título "PRODUCTS" deve estar visível</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>com.automation.hooks.Hooks.scenarioTearDown(io.cucumber.java.Scenario)</span>
+      <div>📸 Evidência de falha — Login com credenciais válidas
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/embedded5.png' src="screenshots/embedded5.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -443,43 +830,67 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="55"><span class="badge log pass-bg mr-2">Pass</span>Logout após login bem-sucedido</div>
+        <div class="node" id="55"><span class="badge log fail-bg mr-2">Fail</span>Logout após login bem-sucedido</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin()">
+              <div class="step fail-bg" title="com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin()">
                 <span>Dado o aplicativo está aberto na tela de login</span>
       <div>
+        <textarea disabled class="code-block">org.opentest4j.AssertionFailedError: Tela de login não está visível ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at com.automation.steps.LoginSteps.appAbertaNaTelaDeLogin(LoginSteps.java:17)
+	at ✽.o aplicativo está aberto na tela de login(classpath:features/login.feature:6)
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.inserirEmail(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.inserirEmail(java.lang.String)">
                 <span>Quando o usuário insere o e-mail "standard_user"</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.inserirSenha(java.lang.String)">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.inserirSenha(java.lang.String)">
                 <span>E o usuário insere a senha "secret_sauce"</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.tocarBotaoLogin()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.tocarBotaoLogin()">
                 <span>E o usuário toca no botão de login</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.validarTelaDeProdutos()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.validarTelaDeProdutos()">
                 <span>Então o usuário deve ser redirecionado para a tela de Produtos</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.realizarLogout()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.realizarLogout()">
                 <span>Quando o usuário realiza o logout</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="com.automation.steps.LoginSteps.validarTelaDeLogin()">
+              <div class="step skip-bg" title="com.automation.steps.LoginSteps.validarTelaDeLogin()">
                 <span>Então o usuário deve estar na tela de login</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>com.automation.hooks.Hooks.scenarioTearDown(io.cucumber.java.Scenario)</span>
+      <div>📸 Evidência de falha — Logout após login bem-sucedido
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/embedded6.png' src="screenshots/embedded6.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -498,7 +909,135 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view category-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:08:28 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Dado o usuário está autenticado com e-mail "standard_user" e senha "secret_sauce"</a>
+<div class="">
+<span class="badge badge-default">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais.Preenchimento completo com dados válidos e envio do pedido.Dado o usuário está autenticado com e-mail "standard_user" e senha "secret_sauce"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:09:53 AM</td>
+<td>
+<a href="#" class="linked" test-id='33' id='36'>Dado o usuário está autenticado com e-mail "standard_user" e senha "secret_sauce"</a>
+<div class="">
+<span class="badge badge-default">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais.Preenchimento completo com dados válidos e envio do pedido.Dado o usuário está autenticado com e-mail "standard_user" e senha "secret_sauce"</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">org.opentest4j.AssertionFailedError</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.opentest4j.AssertionFailedError</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:08:58 AM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='16'>Dado o aplicativo está aberto na tela de login</a>
+<div class="">
+<span class="badge badge-default">Login - Autenticação de Usuário.Login com credenciais válidas.Dado o aplicativo está aberto na tela de login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:09:25 AM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='25'>Dado o aplicativo está aberto na tela de login</a>
+<div class="">
+<span class="badge badge-default">Login - Autenticação de Usuário.Logout após login bem-sucedido.Dado o aplicativo está aberto na tela de login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:10:19 AM</td>
+<td>
+<a href="#" class="linked" test-id='45' id='48'>Dado o aplicativo está aberto na tela de login</a>
+<div class="">
+<span class="badge badge-default">Login - Autenticação de Usuário.Login com credenciais válidas.Dado o aplicativo está aberto na tela de login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:10:45 AM</td>
+<td>
+<a href="#" class="linked" test-id='45' id='57'>Dado o aplicativo está aberto na tela de login</a>
+<div class="">
+<span class="badge badge-default">Login - Autenticação de Usuário.Logout após login bem-sucedido.Dado o aplicativo está aberto na tela de login</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
@@ -509,7 +1048,7 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>2</span>
+<span class='badge log badge-danger'>2</span>
 </span>
 <p class="name">@formulario</p>
 <p class="duration text-sm">2 tests</p>
@@ -517,7 +1056,7 @@
 <div class="test-contents d-none">
 <div class="info">
 <h4>@formulario</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -528,9 +1067,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:23:10 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:08:08 AM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Preenchimento completo com dados válidos e envio do pedido</a>
 <div class="">
@@ -538,9 +1077,9 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:52 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:09:47 AM</td>
 <td>
 <a href="#" class="linked" test-id='33' id='34'>Preenchimento completo com dados válidos e envio do pedido</a>
 <div class="">
@@ -555,7 +1094,7 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>6</span>
+<span class='badge log badge-danger'>6</span>
 </span>
 <p class="name">@regression</p>
 <p class="duration text-sm">6 tests</p>
@@ -563,7 +1102,7 @@
 <div class="test-contents d-none">
 <div class="info">
 <h4>@regression</h4>
-<span status="pass" class='badge log pass-bg'>6 passed</span>
+<span status="fail" class='badge log badge-danger'>6 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -574,9 +1113,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:23:10 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:08:08 AM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Preenchimento completo com dados válidos e envio do pedido</a>
 <div class="">
@@ -584,9 +1123,9 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:22 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:08:51 AM</td>
 <td>
 <a href="#" class="linked" test-id='13' id='14'>Login com credenciais válidas</a>
 <div class="">
@@ -594,9 +1133,9 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:36 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:09:20 AM</td>
 <td>
 <a href="#" class="linked" test-id='13' id='23'>Logout após login bem-sucedido</a>
 <div class="">
@@ -604,9 +1143,9 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:52 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:09:47 AM</td>
 <td>
 <a href="#" class="linked" test-id='33' id='34'>Preenchimento completo com dados válidos e envio do pedido</a>
 <div class="">
@@ -614,9 +1153,9 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:25:39 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:10:14 AM</td>
 <td>
 <a href="#" class="linked" test-id='45' id='46'>Login com credenciais válidas</a>
 <div class="">
@@ -624,9 +1163,9 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:25:49 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:10:40 AM</td>
 <td>
 <a href="#" class="linked" test-id='45' id='55'>Logout após login bem-sucedido</a>
 <div class="">
@@ -641,93 +1180,7 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>6</span>
-</span>
-<p class="name">@smoke</p>
-<p class="duration text-sm">6 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@smoke</h4>
-<span status="pass" class='badge log pass-bg'>6 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:23:10 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='2'>Preenchimento completo com dados válidos e envio do pedido</a>
-<div class="">
-<span class="badge badge-default">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais.Preenchimento completo com dados válidos e envio do pedido</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:22 AM</td>
-<td>
-<a href="#" class="linked" test-id='13' id='14'>Login com credenciais válidas</a>
-<div class="">
-<span class="badge badge-default">Login - Autenticação de Usuário.Login com credenciais válidas</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:36 AM</td>
-<td>
-<a href="#" class="linked" test-id='13' id='23'>Logout após login bem-sucedido</a>
-<div class="">
-<span class="badge badge-default">Login - Autenticação de Usuário.Logout após login bem-sucedido</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:52 AM</td>
-<td>
-<a href="#" class="linked" test-id='33' id='34'>Preenchimento completo com dados válidos e envio do pedido</a>
-<div class="">
-<span class="badge badge-default">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais.Preenchimento completo com dados válidos e envio do pedido</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:25:39 AM</td>
-<td>
-<a href="#" class="linked" test-id='45' id='46'>Login com credenciais válidas</a>
-<div class="">
-<span class="badge badge-default">Login - Autenticação de Usuário.Login com credenciais válidas</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:25:49 AM</td>
-<td>
-<a href="#" class="linked" test-id='45' id='55'>Logout após login bem-sucedido</a>
-<div class="">
-<span class="badge badge-default">Login - Autenticação de Usuário.Logout após login bem-sucedido</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>4</span>
+<span class='badge log badge-danger'>4</span>
 </span>
 <p class="name">@login</p>
 <p class="duration text-sm">4 tests</p>
@@ -735,7 +1188,7 @@
 <div class="test-contents d-none">
 <div class="info">
 <h4>@login</h4>
-<span status="pass" class='badge log pass-bg'>4 passed</span>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -746,9 +1199,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:22 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:08:51 AM</td>
 <td>
 <a href="#" class="linked" test-id='13' id='14'>Login com credenciais válidas</a>
 <div class="">
@@ -756,9 +1209,9 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:36 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:09:20 AM</td>
 <td>
 <a href="#" class="linked" test-id='13' id='23'>Logout após login bem-sucedido</a>
 <div class="">
@@ -766,9 +1219,9 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:25:39 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:10:14 AM</td>
 <td>
 <a href="#" class="linked" test-id='45' id='46'>Login com credenciais válidas</a>
 <div class="">
@@ -776,9 +1229,95 @@
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:25:49 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:10:40 AM</td>
+<td>
+<a href="#" class="linked" test-id='45' id='55'>Logout após login bem-sucedido</a>
+<div class="">
+<span class="badge badge-default">Login - Autenticação de Usuário.Logout após login bem-sucedido</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>6</span>
+</span>
+<p class="name">@smoke</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@smoke</h4>
+<span status="fail" class='badge log badge-danger'>6 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:08:08 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Preenchimento completo com dados válidos e envio do pedido</a>
+<div class="">
+<span class="badge badge-default">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais.Preenchimento completo com dados válidos e envio do pedido</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:08:51 AM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='14'>Login com credenciais válidas</a>
+<div class="">
+<span class="badge badge-default">Login - Autenticação de Usuário.Login com credenciais válidas</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:09:20 AM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='23'>Logout após login bem-sucedido</a>
+<div class="">
+<span class="badge badge-default">Login - Autenticação de Usuário.Logout após login bem-sucedido</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:09:47 AM</td>
+<td>
+<a href="#" class="linked" test-id='33' id='34'>Preenchimento completo com dados válidos e envio do pedido</a>
+<div class="">
+<span class="badge badge-default">Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais.Preenchimento completo com dados válidos e envio do pedido</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:10:14 AM</td>
+<td>
+<a href="#" class="linked" test-id='45' id='46'>Login com credenciais válidas</a>
+<div class="">
+<span class="badge badge-default">Login - Autenticação de Usuário.Login com credenciais válidas</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>06:10:40 AM</td>
 <td>
 <a href="#" class="linked" test-id='45' id='55'>Logout após login bem-sucedido</a>
 <div class="">
@@ -803,25 +1342,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>01/04/2026 06:23:09</h3>
+<h3>02/04/2026 06:08:06</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>01/04/2026 06:26:03</h3>
+<h3>02/04/2026 06:11:06</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>4</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>4</h3>
 </div></div>
 </div>
 </div>
@@ -837,12 +1376,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>4</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>4</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -860,9 +1399,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>6</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='100%'><b>6</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -880,10 +1419,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>42</b> steps passed</small></div>
+<div><small data-tooltip='12%'><b>6</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='12%'><b>6</b> steps failed,
+<b>36</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -899,7 +1438,7 @@
 </div></div>
 <script>
 var timeline = {
-"Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais":71.962,"Login - Autenticação de Usuário":28.581,"Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais":47.539,"Login - Autenticação de Usuário":23.932
+"Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais":42.982,"Login - Autenticação de Usuário":55.947,"Formulário de Cadastro - Preenchimento e Envio de Dados Pessoais":26.981,"Login - Autenticação de Usuário":51.416
 };
 </script>
 <div class="row">
@@ -910,35 +1449,35 @@ var timeline = {
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
 <td>@formulario</td>
+<td>0</td>
 <td>2</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 <tr>
 <td>@regression</td>
+<td>0</td>
 <td>6</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@smoke</td>
-<td>6</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 <tr>
 <td>@login</td>
+<td>0</td>
 <td>4</td>
 <td>0</td>
 <td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@smoke</td>
 <td>0</td>
-<td>100%</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -949,21 +1488,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 4,
-failParent: 0,
+passParent: 0,
+failParent: 4,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 6,
-failChild: 0,
+passChild: 0,
+failChild: 6,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 42,
-failGrandChild: 0,
+passGrandChild: 6,
+failGrandChild: 6,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 36,
 infoGrandChild: 0,
 eventsCount: 5,
 };
